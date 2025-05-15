@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { AuthService } from '../../../auth/services/auth.service';
 
 @Component({
   selector: 'header-front',
@@ -9,4 +10,5 @@ import { RouterLink } from '@angular/router';
 })
 export class HeaderFrontComponent {
 
+  authService = inject (AuthService);
 }
