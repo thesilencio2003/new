@@ -16,7 +16,7 @@ export class UsersPageComponent {
 
   userservice = inject(UserService);
   paginationService = inject(PaginationService);
-  limit = signal(4);
+  limit = signal(5);
 
   
 setLimit = (limit: string) => {
@@ -35,5 +35,9 @@ userResource = rxResource({
     });
   },
 });
+
+deletedUser(id:string){
+  
+}
 
 }

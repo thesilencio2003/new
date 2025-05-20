@@ -32,7 +32,7 @@ export class UserService extends BaseHttpService {
 
 
   getUsers(options: Options): Observable<UsersResponse> {
-    const { limit = 4, page = 1 } = options;
+    const { limit = 5, page = 1 } = options;
 
     const key = `users-${page}-${limit}`;
     if (this.usersCache.has(key)) {
