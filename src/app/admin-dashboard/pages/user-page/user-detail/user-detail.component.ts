@@ -35,6 +35,7 @@ export class UserDetailComponent {
     avatar: [''],
   });
 
+  
   ngOnInit() {
     this.userForm.patchValue({
       first_name: this.user().first_name,
@@ -45,6 +46,7 @@ export class UserDetailComponent {
       avatar: this.user().avatar,
       password: this.user().password,
     });
+    
     console.log(this.userForm.value);
   }
 
