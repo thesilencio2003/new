@@ -42,12 +42,11 @@ export class UserDetailComponent {
       last_name: this.user().last_name,
       email: this.user().email,
       telephone: this.user().telephone,
-      role_id: this.user().Role.id ?? 0,
+      role_id: this.user()?.role_id ?? this.user().Role.id ??  0,
       avatar: this.user().avatar,
       password: this.user().password,
     });
     
-    console.log(this.userForm.value);
   }
 
   rolesResource = rxResource({
@@ -76,7 +75,7 @@ export class UserDetailComponent {
                 Swal.fire({
                     position: 'center',
                     icon: 'success',
-                    title: 'Product created',
+                    title: 'User created',
                     showConfirmButton: false,
                     timer: 1500,
                 });
@@ -86,14 +85,14 @@ export class UserDetailComponent {
         Swal.fire({
             position: 'center',
             icon: 'success',
-            title: 'Product created',
+            title: 'User created',
             showConfirmButton: false,
             timer: 1500,
         });
         this.router.navigate(['/dashboard/users', resp.data.id]);
     });
     } else {
-      this.UserService.update(this.user().id, formValue).subscribe((resp) => {
+      this.UserService.updated(this.user().id, formValue).subscribe((resp) => {
 
         if (this.avatarFile) {
           this.UserService.uploadAvatar(
@@ -103,7 +102,7 @@ export class UserDetailComponent {
             Swal.fire({
               position: 'center',
               icon: 'success',
-              title: 'Product Updated',
+              title: 'User Updated',
               showConfirmButton: false,
               timer: 1500,
             });
@@ -112,7 +111,7 @@ export class UserDetailComponent {
         Swal.fire({
           position: 'center',
           icon: 'success',
-          title: 'Product Updated',
+          title: 'User Updated',
           showConfirmButton: false,
           timer: 1500,
         });
