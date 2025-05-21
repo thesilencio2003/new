@@ -10,7 +10,7 @@ import Swal from 'sweetalert2';
 
 @Component({
   selector: 'user-detail',
-  imports: [ReactiveFormsModule, UserImagePipe, NgOptimizedImage],
+  imports: [ReactiveFormsModule, UserImagePipe,NgOptimizedImage],
   templateUrl: './user-detail.component.html',
   styleUrl: './user-detail.component.css'
 })
