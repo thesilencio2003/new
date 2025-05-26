@@ -1,10 +1,10 @@
 import { Component, inject, signal } from '@angular/core';
-import { UserTableComponent } from '../../../users/components/user-table/user-table.component';
-import { UserService } from '../../../users/services/user.service';
+import { UserTableComponent } from '@users/components/user-table/user-table.component';
+import { UserService } from '@users/services/user.service';
 import { rxResource } from '@angular/core/rxjs-interop';
 import { RouterLink } from '@angular/router';
-import { PaginationService } from '../../../shared/components/pagination/pagination.service';
-import { PaginationComponent } from "../../../shared/components/pagination/pagination.component";
+import { PaginationService } from '@shared/components/pagination/pagination.service';
+import { PaginationComponent } from "@shared/components/pagination/pagination.component";
 import Swal from 'sweetalert2';
 
 @Component({
